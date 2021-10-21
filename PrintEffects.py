@@ -1,5 +1,5 @@
 class Colors:
-    # Clears all colors and affects
+    # Clears all colors and effects
     clear = '\033[0m'
 
     # Effects
