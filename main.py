@@ -16,7 +16,6 @@ creds = {
         "password": "YOUR PASSWORD"
     }
 
-
 def internet_active() -> bool:
     connection = http.HTTPConnection("www.google.com", timeout=5)
     try:
@@ -40,7 +39,7 @@ def main():
 
     inform('Creating browser session...')
     browser_options = ['--headless', '--disable-notifications']
-    browser = Chrome(r'D:\PyCharm\BootcampAutomation\WebDriver\chromedriver.exe', browser_options)
+    browser = Chrome(chrome_driver, browser_options)
 
     inform('Signing into bootcampspot...')
     browser.get_page('https://bootcampspot.com/login')
@@ -68,6 +67,7 @@ def main():
         if 'y' in input('[?] Would you like to join class? (y/n): ').lower():
             url = browser.get_element_url('/html/body/div/main/div/section/div/div[2]/div/div/div/a')
             os.startfile(url)
+            inform(url)
     else:
         error('Unable to check in! \'Check in\' element not found.')
         exit(1)
