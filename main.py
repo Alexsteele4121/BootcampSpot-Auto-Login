@@ -2,7 +2,7 @@ from ChromeAutomation import Chrome
 import http.client as http
 import time
 import os
-from PrintEffects import inform, warning, successful, error
+from PrintAffects import inform, warning, successful, error
 
 
 def internet_active() -> bool:
