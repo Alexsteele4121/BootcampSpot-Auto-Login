@@ -4,6 +4,18 @@ import time
 import os
 from PrintEffects import inform, warning, successful, error
 
+# Please run 'pip install -r requirements.txt' in the terminal to install the
+# proper modules.
+
+# Must be the same version as the chrome version installed on your system.
+# https://chromedriver.chromium.org/downloads
+chrome_driver = "PATH_TO_CHROME_DRIVER"
+
+creds = {
+        "username": "YOUR USERNAME",
+        "password": "YOUR PASSWORD"
+    }
+
 
 def internet_active() -> bool:
     connection = http.HTTPConnection("www.google.com", timeout=5)
@@ -25,11 +37,6 @@ def main():
     while not internet_active():
         warning('Can\'t connect to the internet... trying again in 15 seconds.')
         time.sleep(15)
-
-    creds = {
-        "username": "YOUR USERNAME",
-        "password": "YOUR PASSWORD"
-    }
 
     inform('Creating browser session...')
     browser_options = ['--headless', '--disable-notifications']
