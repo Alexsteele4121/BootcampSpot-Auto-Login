@@ -70,6 +70,7 @@ def main():
             inform(url)
     else:
         error('Unable to check in! \'Check in\' element not found.')
+        browser.close()
         exit(1)
 
     browser.close()
