@@ -44,3 +44,6 @@ def warning(text: str, end: str = '\n'):
 
 def error(text: str, end: str = '\n'):
     print(Colors.red + '[!]', text + Colors.clear, end=end)
+
+def question(text: str):
+    return input(f'{Colors.violet}[?] {text}{Colors.clear}')
